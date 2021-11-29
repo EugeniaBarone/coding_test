@@ -1,0 +1,123 @@
+import maya.cmds as base
+
+cmds.window("Turntable Tool", w = 300, h = 300)
+cmds.columnLayout( adjustableColumn=True )
+
+cmds.showWindow()
+
+base.text("Turntable Tool")
+base.separator(h = 15)
+
+base.button(l = "Create a Sphere", c = "makeSphere()")
+base.separator(h = 15)
+
+base.button(l = "Create a Camera", c = "makeCamera()")
+base.separator(h = 15)
+
+# create sliders 
+
+MoveDistance = cmds.intSliderGrp( l = "Camera Distance", min = -10, max = 10, value = 0, step = 1, f = True , cc = "distanceCamera()")
+
+Move = cmds.intSliderGrp( l = "Camera Height", min = -10, max = 10, value = 0, step = 1, f = True , cc = "moveCamera()")
+
+cmds.showWindow()
+
+
+def makeSphere():
+    sphere = base.polySphere()
+
+def makeCamera():
+    myCamera = base.camera()
+    base.move(0, 0, 10, myCamera)
+    
+def moveCamera():
+    base.move(2, 2, 1, myCamera)
+
+def distanceCamera():
+    if cmds.intSliderGrp(MoveDistance , q = True, value = True) == 10:
+        cmds.move(0,0,20 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == 9:
+        cmds.move(0,0,19 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == 8:
+        cmds.move(0,0,18 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == 7:
+        cmds.move(0,0,17 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == 6:
+        cmds.move(0,0,16 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == 5:
+        cmds.move(0,0,15 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == 4:
+        cmds.move(0,0,14 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == 3:
+        cmds.move(0,0,13 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == 2:
+        cmds.move(0,0,12 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == 1:
+        cmds.move(0,0,11 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == -10:
+        cmds.move(0,0,0 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == -9:
+        cmds.move(0,0,1 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == -8:
+        cmds.move(0,0,2 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == -7:
+        cmds.move(0,0,3 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == -6:
+        cmds.move(0,0,4 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == -5:
+        cmds.move(0,0,5 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == -4:
+        cmds.move(0,0,6 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == -3:
+        cmds.move(0,0,7 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == -2:
+        cmds.move(0,0,8 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == -1:
+        cmds.move(0,0,9 , myCamera )
+    elif cmds.intSliderGrp(MoveDistance , q = True, value = True) == 0:
+        cmds.move(0,0,10 , myCamera )
+  
+    
+def moveCamera():
+    if cmds.intSliderGrp(Move , q = True, value = True) == 10:
+        cmds.move(0,10,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == 9:
+        cmds.move(0,9,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == 8:
+        cmds.move(0,8,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == 7:
+        cmds.move(0,7,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == 6:
+        cmds.move(0,6,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == 5:
+        cmds.move(0,5,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == 4:
+        cmds.move(0,4,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == 3:
+        cmds.move(0,3,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == 2:
+        cmds.move(0,2,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == 1:
+        cmds.move(0,1,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == -10:
+        cmds.move(0,-10,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == -9:
+        cmds.move(0,-9,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == -8:
+        cmds.move(0,-8,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == -7:
+        cmds.move(0,-7,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == -6:
+        cmds.move(0,-6,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == -5:
+        cmds.move(0,-5,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == -4:
+        cmds.move(0,-4,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == -3:
+        cmds.move(0,-3,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == -2:
+        cmds.move(0,-2,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == -1:
+        cmds.move(0,-1,10 , myCamera )
+    elif cmds.intSliderGrp(Move , q = True, value = True) == 0:
+        cmds.move(0,0,10 , myCamera )
